@@ -1,0 +1,7 @@
+# Copio este archivo a .gitignore.original, para subir todos los archivos al repo
+# ya que es el repo para comenzar cualquier proyecto, luego debemos configurar el .gitignore en cada proyecto.
+
+application/config/database.php
+uploads/
+
+
