@@ -1,0 +1,22 @@
+
+
+Se va a codificar un módulo de ejemplo para sacar como base a módulos del backend que se quieran realizar.
+Va a tener altas, se va a poder editar, se va a poder eliminar, avisando que para poder debe eleiminar a su padre si fuera el caso.
+Va a tener un listado con paginador
+Y va a poseer filtros.
+
+
+
+Las tablas ejemplos son:
+
+modulo_uno				Es la tabla principal
+modulo_uno_mult_opc		Esta tabla relaciona modulo_uno con mult_opc por que va a ver un select multiple que saca los nombres de la tabla mult_opc
+mult_opc					Los nombres para seleccionar multiple y así cargar varios items en tabla modulo_uno
+select_opc					La tabla modulo_uno va a tener un select que saca los datos de acá
+radiobutton				La tabla modulo_uno va a tener radiobutton que los nombres salen de acá
+
+
+En el archivo dump_modulo_ejemplo.sql está el dump de estas tablas.
+
+
+

@@ -1,0 +1,6 @@
+
+Se diseñan dos tablas para pensar un módulo, el modulo_dos que van a tener:
+
+un campo de texto
+uno de fecha
+y 7 campos para subir archivos, cada uno con un titulo y una posicion.
