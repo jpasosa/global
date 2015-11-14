@@ -24,3 +24,9 @@
 	margin-left:30px;
 	margin-top:15px;
 	}
+
+
+.textarea_grande {
+    height: 200px;
+    width: 100%;
+}

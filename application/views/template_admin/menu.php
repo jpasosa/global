@@ -39,15 +39,14 @@
 
 				</div>
 					<ul class="nav bs-sidenav">
-
 						<li	class="active">
-							<a	href="#">Módulo Dos</a>
+							<a	href="#">Publicaciones</a>
 							<ul class="nav">
 								<li class="">
-									<a href="<?php echo base_url('admin/modulo_dos/listar'); ?>">Listar</a>
+									<a href="<?php echo base_url('admin/publicaciones/listar'); ?>">Listar</a>
 								</li>
 								<li class="">
-									<a href="<?php echo base_url('admin/modulo_dos/alta'); ?>">Crear</a>
+									<a href="<?php echo base_url('admin/publicaciones/alta'); ?>">Crear</a>
 								</li>
 							</ul>
 						</li>
