@@ -161,13 +161,13 @@ class Publicaciones extends MY_Controller {
 	}
 
 
-	public function ver( $id_modulo_dos = 0 )
+	public function ver( $id_publicacion = 0 )
 	{
 
 
-		if ( $id_modulo_dos == 0) 		redirect('admin/modulo_dos/listar');
+		if ( $id_publicacion == 0) 		redirect('admin/publicaciones/listar');
 
-		$data['modulo_dos'] = $this->modulo_dos_model->get_by_id( $id_modulo_dos );
+		$data['publicacion'] = $this->publicaciones_model->get_by_id( $id_publicacion );
 
 		$data['view_file'] 		= 'ver';
 		$this->load->view('template_admin',$data);

@@ -235,104 +235,30 @@ class Publicaciones_model extends CI_Model
 
 	public function get_by_id( $id )
 	{
-		$q = $this->db->get_where( 'modulo_dos', array('id_modulo_dos'=>(int)$id) );
-		$modulo_dos = $q->row_array();
+		$q = $this->db->get_where( 'publicaciones', array('id_publicacion'=>(int)$id) );
+		$publicacion = $q->row_array();
 
-		$q = $this->db->get_where( 'archivos', array('id_modulo_dos'=>(int)$id) );
+		$q = $this->db->get_where( 'archivos', array('id_publicacion'=>(int)$id) );
 		$archivos = $q->result_array();
 
 		foreach ($archivos as $k => $arch)
 		{
 			// archivo uno
 			if ( isset($arch['id_archivo']) && $arch['posicion'] == 1 ) {
-				$modulo_dos['archivo_uno']['archivo_titulo_uno'] 		= $arch['titulo'];
-				$modulo_dos['archivo_uno']['archivo_uno'] 			= $arch['nombre'];
-				$modulo_dos['archivo_uno']['nombre_archivo_uno']	= $arch['nombre'];
-				$modulo_dos['archivo_uno']['id_archivo']				= $arch['id_archivo'];
-			} else if ( !isset($modulo_dos['archivo_uno']) ) {
-				$modulo_dos['archivo_uno']['archivo_titulo_uno'] 		= '';
-				$modulo_dos['archivo_uno']['archivo_uno'] 			= '';
-				$modulo_dos['archivo_uno']['nombre_archivo_uno']	= '';
-				$modulo_dos['archivo_uno']['id_archivo']				= 0;
-			}
-			// archivo dos
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 2 ) {
-				$modulo_dos['archivo_dos']['archivo_titulo_dos'] 	= $arch['titulo'];
-				$modulo_dos['archivo_dos']['archivo_dos'] 		= $arch['nombre'];
-				$modulo_dos['archivo_dos']['nombre_archivo_dos']= $arch['nombre'];
-				$modulo_dos['archivo_dos']['id_archivo']			= $arch['id_archivo'];
-			} else if (!isset($modulo_dos['archivo_dos'])) {
-				$modulo_dos['archivo_dos']['archivo_titulo_dos'] 	= '';
-				$modulo_dos['archivo_dos']['archivo_dos'] 		= '';
-				$modulo_dos['archivo_dos']['nombre_archivo_dos']= '';
-				$modulo_dos['archivo_dos']['id_archivo']			= 0;
-			}
-			// archivo tres
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 3 ) {
-				$modulo_dos['archivo_tres']['archivo_titulo_tres'] 	= $arch['titulo'];
-				$modulo_dos['archivo_tres']['archivo_tres'] 		=	 $arch['nombre'];
-				$modulo_dos['archivo_tres']['nombre_archivo_tres']= $arch['nombre'];
-				$modulo_dos['archivo_tres']['id_archivo']			= $arch['id_archivo'];
-
-			} else if(!isset($modulo_dos['archivo_tres'])) {
-				$modulo_dos['archivo_tres']['archivo_titulo_tres'] 	= '';
-				$modulo_dos['archivo_tres']['archivo_tres'] 		=	 '';
-				$modulo_dos['archivo_tres']['nombre_archivo_tres']= '';
-				$modulo_dos['archivo_tres']['id_archivo']			= 0;
-			}
-			// archivo cuatro
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 4 ) {
-				$modulo_dos['archivo_cuatro']['archivo_titulo_cuatro']= $arch['titulo'];
-				$modulo_dos['archivo_cuatro']['archivo_cuatro'] 		= $arch['nombre'];
-				$modulo_dos['archivo_cuatro']['nombre_archivo_cuatro'] = $arch['nombre'];
-				$modulo_dos['archivo_cuatro']['id_archivo'] 			= $arch['id_archivo'];
-
-			} else if(!isset($modulo_dos['archivo_cuatro'])) {
-				$modulo_dos['archivo_cuatro']['archivo_titulo_cuatro']= '';
-				$modulo_dos['archivo_cuatro']['archivo_cuatro'] 		= '';
-				$modulo_dos['archivo_cuatro']['nombre_archivo_cuatro'] = '';
-				$modulo_dos['archivo_cuatro']['id_archivo'] 			= 0;
-			}
-			// archivo cinco
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 5 ) {
-				$modulo_dos['archivo_quinto']['archivo_titulo_quinto'] = $arch['titulo'];
-				$modulo_dos['archivo_quinto']['archivo_quinto'] 		= $arch['nombre'];
-				$modulo_dos['archivo_quinto']['nombre_archivo_quinto'] = $arch['nombre'];
-				$modulo_dos['archivo_quinto']['id_archivo'] 			= $arch['id_archivo'];
-			} else if(!isset($modulo_dos['archivo_quinto'])) {
-				$modulo_dos['archivo_quinto']['archivo_titulo_quinto'] = '';
-				$modulo_dos['archivo_quinto']['archivo_quinto'] 		= '';
-				$modulo_dos['archivo_quinto']['nombre_archivo_quinto'] = '';
-				$modulo_dos['archivo_quinto']['id_archivo'] 			= 0;
-			}
-			// archivo seis
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 6 ) {
-				$modulo_dos['archivo_sexto']['archivo_titulo_sexto'] 	= $arch['titulo'];
-				$modulo_dos['archivo_sexto']['archivo_sexto'] 		= $arch['nombre'];
-				$modulo_dos['archivo_sexto']['nombre_archivo_sexto'] = $arch['nombre'];
-				$modulo_dos['archivo_sexto']['id_archivo'] 		= $arch['id_archivo'];
-			} else if(!isset($modulo_dos['archivo_sexto'])) {
-				$modulo_dos['archivo_sexto']['archivo_titulo_sexto'] 	= '';
-				$modulo_dos['archivo_sexto']['archivo_sexto'] 		= '';
-				$modulo_dos['archivo_sexto']['nombre_archivo_sexto'] = '';
-				$modulo_dos['archivo_sexto']['id_archivo'] 		= 0;
-			}
-			// archivo siete
-			if( isset($arch['id_archivo']) && $arch['posicion'] == 7 ) {
-				$modulo_dos['archivo_septimo']['archivo_titulo_septimo'] 	= $arch['titulo'];
-				$modulo_dos['archivo_septimo']['archivo_septimo'] 		= $arch['nombre'];
-				$modulo_dos['archivo_septimo']['nombre_archivo_septimo']= $arch['nombre'];
-				$modulo_dos['archivo_septimo']['id_archivo']				= $arch['id_archivo'];
-			} else if(!isset($modulo_dos['archivo_septimo'])) {
-				$modulo_dos['archivo_septimo']['archivo_titulo_septimo'] 	= '';
-				$modulo_dos['archivo_septimo']['archivo_septimo'] 		= '';
-				$modulo_dos['archivo_septimo']['nombre_archivo_septimo']= '';
-				$modulo_dos['archivo_septimo']['id_archivo']				= 0;
+				$publicacion['archivo_uno']['archivo_titulo_uno'] 		= $arch['titulo'];
+				$publicacion['archivo_uno']['archivo_uno'] 			= $arch['nombre'];
+				$publicacion['archivo_uno']['nombre_archivo_uno']	= $arch['nombre'];
+				$publicacion['archivo_uno']['id_archivo']				= $arch['id_archivo'];
+			} else if ( !isset($publicacion['archivo_uno']) ) {
+				$publicacion['archivo_uno']['archivo_titulo_uno'] 		= '';
+				$publicacion['archivo_uno']['archivo_uno'] 			= '';
+				$publicacion['archivo_uno']['nombre_archivo_uno']	= '';
+				$publicacion['archivo_uno']['id_archivo']				= 0;
 			}
 
 		}
 
-		return $modulo_dos;
+		return $publicacion;
 	}
 
 
