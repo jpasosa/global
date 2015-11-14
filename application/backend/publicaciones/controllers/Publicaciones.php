@@ -185,13 +185,12 @@ class Publicaciones extends MY_Controller {
 		$this->load->config('paginacion');
 		$this->load->helper('pagination');
 		$config 					= get_bootstrap_pagination(); // configuro todo el maquetado para aginación con bootstrap
-            $config['base_url'] 			= base_url('admin/modulo_dos/listar') . '/';
+            $config['base_url'] 			= base_url('admin/publicaciones/listar') . '/';
             $config['uri_segment'] 		= 4;
-            $config['per_page'] 		= $this->config->item('paginacion_modulo_dos');
-            $data['modulo_dos'] 		= $this->modulo_dos_model->get_all_paginado( $page, $config['per_page'] );
-            $config['total_rows'] 		= $this->modulo_dos_model->count_all();
+            $config['per_page'] 		= $this->config->item('paginacion_publicaciones');
+            $data['publicaciones'] 		= $this->publicaciones_model->get_all_paginado( $page, $config['per_page'] );
+            $config['total_rows'] 		= $this->publicaciones_model->count_all();
             $config['use_page_numbers'] = true;
-
             $this->pagination->initialize($config);
 
             $data['paginas'] = $this->pagination->create_links();

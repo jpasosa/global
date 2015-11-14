@@ -2,4 +2,4 @@
 
 
 $config["paginacion_modulo_uno"] = 20;
-$config["paginacion_modulo_dos"] = 5;
+$config["paginacion_publicaciones"] = 5;

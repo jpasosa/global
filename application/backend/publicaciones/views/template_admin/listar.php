@@ -4,30 +4,38 @@
 				<tr>
 					<th width="6%">id</th>
 					<th>fecha</th>
-					<th>texto</th>
-					<th>archivos</th>
+					<th>imágen</th>
+					<th>titulo</th>
+					<th>resumen</th>
 					<th width="15%">acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($modulo_dos AS $mod): ?>
-					<tr id="tr_<?php echo $mod['id_modulo_dos']; ?>">
+				<?php foreach ($publicaciones AS $publi): ?>
+					<tr id="tr_<?php echo $publi['id_publicacion']; ?>">
 						<td scope="row">
-							<a class="" href="<?php echo base_url('admin/modulo_dos/editar/' . $mod['id_modulo_dos']); ?>" title="editar">
-								<?php echo $mod['id_modulo_dos']; ?>
+							<a class="" href="<?php echo base_url('admin/publicaciones/editar/' . $publi['id_publicacion']); ?>" title="editar">
+								<?php echo $publi['id_publicacion']; ?>
 							</a>
 						</td>
-						<td class="text-success"> <?php echo $mod['fecha']; ?></td>
-						<td class="text-success"> <?php echo $mod['texto_uno']; ?></td>
-						<td class="text-muted" ><?php echo $mod['cant_archivos']; ?></td>
+						<td class="text-success"> <?php echo $publi['fecha']; ?></td>
+						<td class="text-success">
+							<?php if ( isset($publi['archivos'][0]['nombre']) && $publi['archivos'][0]['nombre'] != '' ): ?>
+								<img width="80" heigth="40" src="<?php echo base_url('uploads/publicaciones/' . $publi['archivos'][0]['nombre']); ?>" alt="">
+							<?php else: ?>
+								<img width="80" heigth="40" src="<?php echo base_url('uploads/publicaciones/void_image_publicaciones.jpg'); ?>" alt="">
+							<?php endif; ?>
+						</td>
+						<td class="text-success"> <?php echo $publi['titulo']; ?></td>
+						<td class="text-muted" ><?php echo $publi['resumen']; ?></td>
 						<td class="text-danger">
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('admin/modulo_dos/ver/' . $mod['id_modulo_dos']); ?>" title="ver">
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('admin/publicaciones/ver/' . $publi['id_publicacion']); ?>" title="ver">
 								<span class="glyphicon glyphicon-search"></span>
 							</a>
-							<a class="btn btn-default btn-xs" href="<?php echo base_url('admin/modulo_dos/editar/' . $mod['id_modulo_dos']); ?>" title="editar">
+							<a class="btn btn-default btn-xs" href="<?php echo base_url('admin/publicaciones/editar/' . $publi['id_publicacion']); ?>" title="editar">
 								<span class="glyphicon glyphicon-edit"></span>
 							</a>
-							<button class="delete btn-default btn btn-xs" type="button" data-id="<?php echo $mod['id_modulo_dos']; ?>" title="eliminar">
+							<button class="delete btn-default btn btn-xs" type="button" data-id="<?php echo $publi['id_publicacion']; ?>" title="eliminar">
 								<span class="glyphicon glyphicon-remove-circle"></span>
 							</button>
 						</td>

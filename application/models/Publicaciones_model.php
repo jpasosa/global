@@ -207,30 +207,30 @@ class Publicaciones_model extends CI_Model
 
 
 		$this->db->select('*');
-		$this->db->from('modulo_dos');
-		$this->db->order_by("modulo_dos.id_modulo_dos", "desc");
+		$this->db->from('publicaciones');
+		$this->db->order_by("publicaciones.id_publicacion", "desc");
 		$this->db->limit($lim_offset,$lim_start);
 		$query = $this->db->get();
-		$modulo_dos = $query->result_array();
+		$publicaciones = $query->result_array();
 
-		foreach ($modulo_dos as $k=>$mod_dos)
+		foreach ($publicaciones as $k=>$publi)
 		{
-			$query_archivos = $this->db->get_where('archivos', array('id_modulo_dos'=>$mod_dos['id_modulo_dos']));
+			$query_archivos = $this->db->get_where('archivos', array('id_publicacion'=>$publi['id_publicacion']));
 			$query_archivos = $query_archivos->result_array();
-			$modulo_dos[$k]['archivos'] 		= $query_archivos;
-			$modulo_dos[$k]['cant_archivos'] 	= count($query_archivos);
+			$publicaciones[$k]['archivos'] 		= $query_archivos;
+			$publicaciones[$k]['cant_archivos'] 	= count($query_archivos);
 		}
 
-		return $modulo_dos;
+		return $publicaciones;
 	}
 
 	public function count_all()
 	{
-		$query = $this->db->get('modulo_dos');
-		$modulo_dos = $query->result_array();
+		$query = $this->db->get('publicaciones');
+		$publicaciones = $query->result_array();
 
 
-		return count($modulo_dos);
+		return count($publicaciones);
 	}
 
 	public function get_by_id( $id )
