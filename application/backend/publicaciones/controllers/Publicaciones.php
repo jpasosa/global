@@ -247,23 +247,23 @@ class Publicaciones extends MY_Controller {
 	// Nos va a eliminar todos los archivos y registros del modulo dos relacionados.
 	public function erase_ajax_reg_and_files()
 	{
-		$id_modulo_dos = $this->input->post('id_modulo_dos');
+		$id_publicacion = $this->input->post('id_publicacion');
 
 		// Elimino los archivos relacionados
-		$archivos = $this->modulo_dos_model->get_archivos_by_id( $id_modulo_dos );
+		$archivos = $this->publicaciones_model->get_archivos_by_id( $id_publicacion );
 		$this->load->helper("file");
 
 		// elimino archivos
 		foreach ($archivos AS $arch)
 		{
 			$nombre_archivo = $arch['nombre'];
-			$erase_file = unlink('/var/www/html/ci3/uploads/modulo_dos/' . $nombre_archivo);
+			$erase_file = unlink('/var/www/html/global/uploads/publicaciones/' . $nombre_archivo);
 		}
 
 		// elimino registros de archivos //
-		$this->db->delete('archivos', array('id_modulo_dos' => $id_modulo_dos));
+		$this->db->delete('archivos', array('id_publicacion' => $id_publicacion));
 		// elimino registro de modulo_dos //
-		$this->db->delete('modulo_dos', array('id_modulo_dos' => $id_modulo_dos));
+		$this->db->delete('publicaciones', array('id_publicacion' => $id_publicacion));
 
 		if ( $this->db->affected_rows() ) {
 			$data['success'] = 'success';

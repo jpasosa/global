@@ -99,10 +99,10 @@ class Publicaciones_model extends CI_Model
 	}
 
 	// nos selecciona todos los archivos relacionados a dicho registro de modulo_dos
-	public function get_archivos_by_id( $id_modulo_dos )
+	public function get_archivos_by_id( $id_publicacion )
 	{
 
-		$q = $this->db->get_where('archivos', array('id_modulo_dos'=>$id_modulo_dos));
+		$q = $this->db->get_where('archivos', array('id_publicacion'=>$id_publicacion));
 		$archivos = $q->result_array();
 
 		return $archivos;

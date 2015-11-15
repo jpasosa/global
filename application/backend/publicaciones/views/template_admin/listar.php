@@ -60,19 +60,19 @@ $(function()
 {
 	$('.delete').bind('click',function(e)
 	{
-		var id_modulo_dos = $(this).data('id');
-		if (confirm('Seguro, desea eliminar el registro entero? Van a eliminarse también los archivos relacionados.'))
+		var id_publicacion = $(this).data('id');
+		if (confirm('Seguro, desea eliminar la publicación entera?'))
 		{
 			$.ajax(
 			{
 				type: 'POST',
 				dataType: 'json',
-				url: _base_url + "admin/modulo_dos/erase_ajax_reg_and_files",
-				data: {id_modulo_dos: id_modulo_dos},
+				url: _base_url + "admin/publicaciones/erase_ajax_reg_and_files",
+				data: {id_publicacion: id_publicacion},
 				success: function(data) {
 					console.log("success");
 					console.log(data);
-					$("#tr_" + id_modulo_dos).hide("slow");
+					$("#tr_" + id_publicacion).hide("slow");
 				},
 				error: function(e){
 					console.log('ERROR');
