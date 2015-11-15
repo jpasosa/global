@@ -63,113 +63,28 @@ class Publicaciones_model extends CI_Model
 
 	}
 
-	public function update( $modulo_dos )
+	public function update( $publicacion )
 	{
 
 		$this->db->trans_start();
 
-		$this->db->where('id_modulo_dos', $modulo_dos['id_modulo_dos']);
-		$this->db->update('modulo_dos', array('texto_uno'=>$modulo_dos['texto_uno'], 'fecha'=>$modulo_dos['fecha']));
+		$this->db->where('id_publicacion', $publicacion['id_publicacion']);
+		$this->db->update('publicaciones', array('titulo'=>$publicacion['titulo'], 'fecha'=>$publicacion['fecha'], 'resumen'=>$publicacion['resumen'], 'nota_completa'=>$publicacion['nota_completa']));
 
 		// Archivo 1
-		if ( $modulo_dos['archivo_uno']['id_archivo'] != '0')
+		if ( $publicacion['archivo_uno']['id_archivo'] != '0')
 		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_uno']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_uno']['archivo_titulo_uno'],
-													'nombre'	=>$modulo_dos['archivo_uno']['archivo_uno'] ));
-		} else if ( $modulo_dos['archivo_uno']['id_archivo'] == '0' && $modulo_dos['archivo_uno']['archivo_uno'] != ''  )
+			$this->db->where('id_archivo', $publicacion['archivo_uno']['id_archivo']);
+			$this->db->update('archivos', array(	'titulo'		=>$publicacion['archivo_uno']['archivo_titulo_uno'],
+													'nombre'	=>$publicacion['archivo_uno']['archivo_uno'] ));
+		} else if ( $publicacion['archivo_uno']['id_archivo'] == '0' && $publicacion['archivo_uno']['archivo_uno'] != ''  )
 		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_uno']['archivo_uno'],
-												'titulo'=>$modulo_dos['archivo_uno']['archivo_titulo_uno'],
+			$this->db->insert('archivos', array('id_publicacion'=>$publicacion['id_publicacion'],
+												'nombre'=>$publicacion['archivo_uno']['archivo_uno'],
+												'titulo'=>$publicacion['archivo_uno']['archivo_titulo_uno'],
 												'posicion'=>1
 												));
 		}
-		// Archivo 2
-		if ( $modulo_dos['archivo_dos']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_dos']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_dos']['archivo_titulo_dos'],
-													'nombre'	=>$modulo_dos['archivo_dos']['archivo_dos'] ));
-		} else if ( $modulo_dos['archivo_dos']['id_archivo'] == '0' && $modulo_dos['archivo_dos']['archivo_dos'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_dos']['archivo_dos'],
-												'titulo'=>$modulo_dos['archivo_dos']['archivo_titulo_dos'],
-												'posicion'=>2
-												));
-		}
-		// Archivo 3
-		if ( $modulo_dos['archivo_tres']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_tres']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_tres']['archivo_titulo_tres'],
-													'nombre'	=>$modulo_dos['archivo_tres']['archivo_tres'] ));
-		} else if ( $modulo_dos['archivo_tres']['id_archivo'] == '0' && $modulo_dos['archivo_tres']['archivo_tres'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_tres']['archivo_tres'],
-												'titulo'=>$modulo_dos['archivo_tres']['archivo_titulo_tres'],
-												'posicion'=>3
-												));
-		}
-		// Archivo 4
-		if ( $modulo_dos['archivo_cuatro']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_cuatro']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_cuatro']['archivo_titulo_cuatro'],
-													'nombre'	=>$modulo_dos['archivo_cuatro']['archivo_cuatro'] ));
-		} else if ( $modulo_dos['archivo_cuatro']['id_archivo'] == '0' && $modulo_dos['archivo_cuatro']['archivo_cuatro'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_cuatro']['archivo_cuatro'],
-												'titulo'=>$modulo_dos['archivo_cuatro']['archivo_titulo_cuatro'],
-												'posicion'=>4
-												));
-		}
-		// Archivo 5
-		if ( $modulo_dos['archivo_quinto']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_quinto']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_quinto']['archivo_titulo_quinto'],
-													'nombre'	=>$modulo_dos['archivo_quinto']['archivo_quinto'] ));
-		} else if ( $modulo_dos['archivo_quinto']['id_archivo'] == '0' && $modulo_dos['archivo_quinto']['archivo_quinto'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_quinto']['archivo_quinto'],
-												'titulo'=>$modulo_dos['archivo_quinto']['archivo_titulo_quinto'],
-												'posicion'=>5
-												));
-		}
-		// Archivo 6
-		if ( $modulo_dos['archivo_sexto']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_sexto']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_sexto']['archivo_titulo_sexto'],
-													'nombre'	=>$modulo_dos['archivo_sexto']['archivo_sexto'] ));
-		} else if ( $modulo_dos['archivo_sexto']['id_archivo'] == '0' && $modulo_dos['archivo_sexto']['archivo_sexto'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_sexto']['archivo_sexto'],
-												'titulo'=>$modulo_dos['archivo_sexto']['archivo_titulo_sexto'],
-												'posicion'=>6
-												));
-		}
-		// Archivo 7
-		if ( $modulo_dos['archivo_septimo']['id_archivo'] != '0')
-		{
-			$this->db->where('id_archivo', $modulo_dos['archivo_septimo']['id_archivo']);
-			$this->db->update('archivos', array(	'titulo'		=>$modulo_dos['archivo_septimo']['archivo_titulo_septimo'],
-													'nombre'	=>$modulo_dos['archivo_septimo']['archivo_septimo'] ));
-		} else if ( $modulo_dos['archivo_septimo']['id_archivo'] == '0' && $modulo_dos['archivo_septimo']['archivo_septimo'] != ''  )
-		{
-			$this->db->insert('archivos', array('id_modulo_dos'=>$modulo_dos['id_modulo_dos'],
-												'nombre'=>$modulo_dos['archivo_septimo']['archivo_septimo'],
-												'titulo'=>$modulo_dos['archivo_septimo']['archivo_titulo_septimo'],
-												'posicion'=>7
-												));
-		}
-
 
 		$this->db->trans_complete();
 
@@ -241,25 +156,33 @@ class Publicaciones_model extends CI_Model
 		$q = $this->db->get_where( 'archivos', array('id_publicacion'=>(int)$id) );
 		$archivos = $q->result_array();
 
-		foreach ($archivos as $k => $arch)
+		if ( count($archivos) > 0 )
 		{
-			// archivo uno
-			if ( isset($arch['id_archivo']) && $arch['posicion'] == 1 ) {
-				$publicacion['archivo_uno']['archivo_titulo_uno'] 		= $arch['titulo'];
-				$publicacion['archivo_uno']['archivo_uno'] 			= $arch['nombre'];
-				$publicacion['archivo_uno']['nombre_archivo_uno']	= $arch['nombre'];
-				$publicacion['archivo_uno']['id_archivo']				= $arch['id_archivo'];
-			} else if ( !isset($publicacion['archivo_uno']) ) {
+				foreach ($archivos as $k => $arch)
+				{
+					// archivo uno
+					if ( isset($arch['id_archivo']) && $arch['posicion'] == 1 ) {
+						$publicacion['archivo_uno']['archivo_titulo_uno'] 		= $arch['titulo'];
+						$publicacion['archivo_uno']['archivo_uno'] 			= $arch['nombre'];
+						$publicacion['archivo_uno']['nombre_archivo_uno']	= $arch['nombre'];
+						$publicacion['archivo_uno']['id_archivo']				= $arch['id_archivo'];
+					} else if ( !isset($publicacion['archivo_uno']) ) {
+						$publicacion['archivo_uno']['archivo_titulo_uno'] 		= '';
+						$publicacion['archivo_uno']['archivo_uno'] 			= '';
+						$publicacion['archivo_uno']['nombre_archivo_uno']	= '';
+						$publicacion['archivo_uno']['id_archivo']				= 0;
+					}
+				}
+		} else {
 				$publicacion['archivo_uno']['archivo_titulo_uno'] 		= '';
 				$publicacion['archivo_uno']['archivo_uno'] 			= '';
 				$publicacion['archivo_uno']['nombre_archivo_uno']	= '';
 				$publicacion['archivo_uno']['id_archivo']				= 0;
-			}
-
 		}
 
 		return $publicacion;
 	}
+
 
 
 

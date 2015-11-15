@@ -50,28 +50,25 @@ class Publicaciones extends MY_Controller {
 	}
 
 
-	public function editar( $id_modulo_dos )
+	public function editar( $id_publicacion )
 	{
 
-		if ( $id_modulo_dos == 0) 		redirect('admin/modulo_dos/listar');
+		if ( $id_publicacion == 0) 		redirect('admin/publicaciones/listar');
 
-		$data['form_action'] = base_url('admin/modulo_dos/editar/' . $id_modulo_dos);
+		$data['form_action'] = base_url('admin/publicaciones/editar/' . $id_publicacion);
 
 
 		// Validaciones
-		$this->form_validation->set_rules('texto_uno', 'Texto Uno', 'required',
-												array('required' => 'El campo %s es requerido.')
-											);
-		$this->form_validation->set_rules('fecha', 'Fecha', 'required',
-												array('required' => 'El campo %s es requerido.')
-											);
+		$validations = $this->get_validations();
+		$this->form_validation->set_rules($validations);
+
 
 		if ( $this->input->server('REQUEST_METHOD') == 'POST' ) {
-			$data['modulo_dos'] = $this->get_modulo_dos_post();
+			$data['publicacion'] = $this->get_publicaciones_post();
 		} else {
-			$data['modulo_dos'] = $this->modulo_dos_model->get_by_id( $id_modulo_dos );
+			$data['publicacion'] = $this->publicaciones_model->get_by_id( $id_publicacion );
 		}
-		$data['modulo_dos']['id_modulo_dos'] = $id_modulo_dos;
+		$data['publicacion']['id_publicacion'] = $id_publicacion;
 
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -80,9 +77,9 @@ class Publicaciones extends MY_Controller {
 		}
 		else
 		{
-			$update = $this->modulo_dos_model->update($data['modulo_dos']);
+			$update = $this->publicaciones_model->update($data['publicacion']);
 			if ( $update == true ) {
-				$this->session->set_flashdata('success', 'Se actualizó correctamente el registro del Módulo Dos');
+				$this->session->set_flashdata('success', 'Se actualizó correctamente el registro de la publicación');
 			} else {
 				$this->session->set_flashdata('error', 'No se pudo actualizar la base');
 			}
@@ -153,7 +150,7 @@ class Publicaciones extends MY_Controller {
 		$modulo_dos['id_archivo'] = $this->input->post('id_archivo_' . $posicion);
 
 		if ($modulo_dos['id_archivo'] != 0 ) {
-			$this->modulo_dos_model->update_file( $modulo_dos );
+			$this->publicaciones_model->update_file( $modulo_dos );
 		}
 
 		return $modulo_dos;
