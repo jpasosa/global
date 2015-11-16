@@ -11,10 +11,10 @@
 	<title><?php echo $this->config->item('default_title');?> :: Ingreso a la aplicación</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="<?php echo PUBLIC_FOLDER;?>css/bootstrap.css" rel="stylesheet">
+	<link href="<?php echo base_url('css/bootstrap.css');?>" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="<?php echo PUBLIC_FOLDER;?>css/signin.css" rel="stylesheet">
+	<link href="<?php echo base_url('css/signin.css');?>" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
