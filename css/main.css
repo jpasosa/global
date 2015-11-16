@@ -30,3 +30,28 @@
     height: 200px;
     width: 100%;
 }
+
+
+
+#header_admin {
+    border-top: 5px solid #EDEDED;
+    border-bottom: 2px solid #bf0411;
+    margin: 0 0 20px 0;
+    background-color: #FFFFFF;
+}
+#logo_admin {
+    float: left;
+    margin: 5px 0 0 0;
+}
+.navbar-fixed-top {
+    /*min-height: 100px;*/
+}
+
+
+/*#menu_izq_admin {
+    font-family: "Open Sans", Arial, sans-serif;
+}
+#menu_izq_admin li a {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #bf0411;
+}*/
