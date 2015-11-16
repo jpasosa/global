@@ -81,7 +81,7 @@ class Login extends MY_Controller {
 				$this->user->init($my_data);
 
 				$this->session->set_userdata($my_data);
-				redirect('admin/categorias');
+				redirect('admin/home');
 			}
 			else {
 				$this->error['error_login'] = true;

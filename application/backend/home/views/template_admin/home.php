@@ -19,10 +19,10 @@
 
 
 <div class="bs-callout bs-callout-warning" id="callout-navbar-mobile-caveats">
-	<h4>Bienvenido al PANEL ADMINISTADOR.</h4>
+	<h4>Bienvenido al PANEL Administrador.</h4>
 	<p>
 		Desde aquí podés configurar lo necesario para poder agregar/editar o eliminar datos que van a ser vistos desde la web.
-		Quiero modificar<a href="#"> mi perfil.</a>
+		Quiero modificar<a href="<?php echo base_url('admin/login/mi_cuenta'); ?>"> mi perfil.</a>
 	</p>
 </div>
 
