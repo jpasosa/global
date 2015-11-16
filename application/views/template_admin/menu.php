@@ -3,7 +3,7 @@
 <!-- Docs master nav -->
 <header id="header_admin" class="navbar navbar navbar-fixed-top">
 	<div class="container">
-		<img width="180" height="60" id="logo_admin" src="<?php echo base_url('assets/images/agro_logo_admin.jpg'); ?>" alt="logo.jpg">
+		<img width="180" height="60" id="logo_admin" src="<?php echo base_url('assets/images/agro_logo_admin.jpg'); ?>" alt="logo.jpg" />
 		<div class="navbar-header" style="margin-left: 100px;">
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
