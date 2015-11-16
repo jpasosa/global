@@ -28,7 +28,7 @@
 
 
 		<!-- Uso para los menúes -->
-		<link href="<?php echo ASSETS;?>css/docs.css" rel="stylesheet">
+		<link href="<?php echo base_url('css/docs.css');?>" rel="stylesheet">
 		<!-- <link href="<?php echo ASSETS;?>css/pygments-manni.css" rel="stylesheet"> -->
 
 		  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -71,7 +71,7 @@
 
 
 		<!-- CSS Principal -->
-		<link href="<?php echo PUBLIC_FOLDER;?>css/main.css" rel="stylesheet">
+		<link href="<?php echo base_url('css/main.css');?>" rel="stylesheet">
 
 		<!-- Extras CSS -->
 		<?php if(isset($scripts_css)):?>
@@ -93,8 +93,8 @@
 
 		<!-- Choosen Select -->
 
-		<link rel="stylesheet" href="<?php echo PUBLIC_FOLDER;?>assets/chosen/docsupport/prism.css">
-		<link rel="stylesheet" href="<?php echo PUBLIC_FOLDER;?>assets/chosen/chosen.css" />
+		<link rel="stylesheet" href="<?php echo base_url('assets/chosen/docsupport/prism.css');?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/chosen/chosen.css');?>" />
 		<style type="text/css" media="all">
 			/* fix rtl for demo */
 			.chosen-rtl .chosen-drop { left: -9000px; }
