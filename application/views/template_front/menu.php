@@ -7,7 +7,7 @@
 						<div class="header-row">
 							<div class="header-column">
 								<div class="header-logo">
-									<a href="index.html">
+									<a href="<?php echo base_url('home') ?>">
 										<img alt="Global Inversion" width="396" height="108" data-sticky-width="147" data-sticky-height="40" data-sticky-top="33" src="<?php echo ASSETS . 'front/img/logo.png' ?>">
 									</a>
 								</div>
