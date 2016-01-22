@@ -17,7 +17,7 @@
 									<nav class="header-nav-top">
 										<ul class="nav nav-pills">
 											<li class="hidden-xs">
-												<a href="archivos.html"><i class="fa fa-angle-right"></i> Noticias</a>
+												<a href="<?php echo base_url('noticias'); ?>"><i class="fa fa-angle-right"></i> Noticias</a>
 											</li>
 										</ul>
 									</nav>
@@ -35,20 +35,20 @@
 										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 											<nav>
 												<ul class="nav nav-pills" id="mainNav">
-													<li class="active">
-														<a href="index.html">Inicio</a>
+													<li class="<?php if($this->router->fetch_module() == 'home') echo 'active'; ?>">
+														<a href="<?php echo base_url('home'); ?>">Inicio</a>
 													</li>
-													<li>
-														<a href="productos.html">Productos</a>
+													<li class="<?php if($this->router->fetch_module() == 'productos') echo 'active'; ?>">
+														<a href="<?php echo base_url('productos'); ?>">Productos</a>
 													</li>
-													<li>
-														<a href="inversores.html">Inversores</a>
+													<li class="<?php if($this->router->fetch_module() == 'inversores') echo 'active'; ?>">
+														<a href="<?php echo base_url('inversores'); ?>">Inversores</a>
 													</li>
-													<li>
-														<a href="equipo.html">Equipo</a>
+													<li class="<?php if($this->router->fetch_module() == 'equipo') echo 'active'; ?>">
+														<a href="<?php echo base_url('equipo'); ?>">Equipo</a>
 													</li>
-                                                    					<li>
-														<a href="contacto.html">Comenzar</a>
+                                                    					<li class="<?php if($this->router->fetch_module() == 'comenzar') echo 'active'; ?>">
+														<a href="<?php echo base_url('comenzar'); ?>">Comenzar</a>
 													</li>
 												</ul>
 											</nav>
