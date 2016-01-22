@@ -63,10 +63,10 @@
 							<span class="day">15</span>
 							<span class="month">Ene</span>
 						</div>
-						<h4 class="heading-primary"><a href="nota.html">Titulo de la nota</a></h4>
+						<h4 class="heading-primary"><a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a></h4>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="nota.html" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
 						</p>
 					</article>
 				</div>
@@ -82,10 +82,10 @@
 							<span class="day">15</span>
 							<span class="month">Jan</span>
 						</div>
-						<h4 class="heading-primary"><a href="nota.html">Titulo de la nota</a></h4>
+						<h4 class="heading-primary"><a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a></h4>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="nota.html" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
 						</p>
 					</article>
 				</div>
@@ -102,11 +102,11 @@
 							<span class="month">Ene</span>
 						</div>
 						<h4 class="heading-primary">
-							<a href="nota.html">Titulo de la nota</a>
+							<a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a>
 						</h4>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="nota.html" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
 						</p>
 					</article>
 				</div>
@@ -123,11 +123,11 @@
 							<span class="month">Ene</span>
 						</div>
 						<h4 class="heading-primary">
-							<a href="nota.html">Titulo de la nota</a>
+							<a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a>
 						</h4>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="nota.html" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
 						</p>
 					</article>
 				</div>
@@ -142,7 +142,7 @@
 			<p>Ahí podés encontrar<strong> todas las notas</strong> del sitio</p>
 		</div>
 		<div class="call-to-action-btn">
-			<a href="archivos.html" target="_blank" class="btn btn-lg btn-primary">Ir al archivo</a>
+			<a href="<?php echo base_url('noticias') ?>" target="_blank" class="btn btn-lg btn-primary">Ir al archivo</a>
 		</div>
 	</section>
 </div>
