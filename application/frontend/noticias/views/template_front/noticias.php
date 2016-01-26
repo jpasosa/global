@@ -27,7 +27,7 @@
 									<article class="post post-large">
 										<div class="post-image">
 											<div class="img-thumbnail">
-												<img class="img-responsive" src="<?php echo '/uploads/publicaciones/' . $public['nombre']; ?>" width="1280" heigth="500" alt="">
+												<img class="img-responsive" src="<?php echo base_url('/uploads/publicaciones/' . $public['nombre']); ?>" width="1280" heigth="500" alt="">
 											</div>
 										</div>
 										<div class="post-date">

@@ -3,7 +3,7 @@
 		<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"gridwidth": 1170, "gridheight": 329}'>
 			<ul>
 				<li data-transition="fade">
-					<img src="<?php echo ASSETS . 'front/img/slides/slide-home.jpg' ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" 	class="rev-slidebg">
+					<img src="<?php echo base_url('assets/front/img/slides/slide-home.jpg'); ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" 	class="rev-slidebg">
 				</li>
 			</ul>
 		</div>

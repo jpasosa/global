@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-sm-4">
 
-				<img class="img-responsive" width="300" height="211" src="<?php echo ASSETS . 'front/img/equipo.png' ?>" style="z-index:999">
+				<img class="img-responsive" width="300" height="211" src="<?php echo base_url('assets/front/img/equipo.png'); ?>" style="z-index:999">
 			</div>
 
 			<div class="col-sm-8">

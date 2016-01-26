@@ -44,7 +44,7 @@
                       	    </tbody>
                       	  </table>
                           </div>
-                          <div class="col-md-3"><img src="<?php echo ASSETS . 'front/img/inversores.png' ?>" class="img-responsive"></div>
+                          <div class="col-md-3"><img src="<?php echo base_url('assets/front/img/inversores.png'); ?>" class="img-responsive"></div>
                           <div class="col-md-12">
                         	<p>Para cubrirte de eventualidades como problemas climáticos, garantizamos tu inversión con nuestro sembrado en explotación y te ofrecemos una canasta de bonos nacionales hasta el 100% de la inversión que hiciste.</p>
 

@@ -3,7 +3,7 @@
 		<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"gridwidth": 1170, "gridheight": 329}'>
 			<ul>
 				<li data-transition="fade">
-					<img src="<?php echo ASSETS . 'front/img/slides/slide-home.jpg' ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" class="rev-slidebg" />
+					<img src="<?php echo base_url('assets/front/img/slides/slide-home.jpg'); ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" class="rev-slidebg" />
 				</li>
 			</ul>
 		</div>
@@ -57,7 +57,7 @@
 					<div class="recent-posts">
 						<article class="post">
 							<div class="img-thumbnail">
-								<img class="img-responsive" src="<?php echo 'uploads/publicaciones/' . $publi['nombre']; ?>" width="360" height="150" />
+								<img class="img-responsive" src="<?php echo base_url('uploads/publicaciones/' . $publi['nombre']); ?>" width="360" height="150" />
 							</div>
 							<div class="date">
 								<span class="day"><?php echo $publi['dia']; ?></span>

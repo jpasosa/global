@@ -24,7 +24,7 @@
 									<div class="post-image">
 											<div>
 												<div class="img-thumbnail">
-													<img class="img-responsive" src="<?php echo '/uploads/publicaciones/' . $publicacion['archivo_uno']['archivo_uno']; ?>" alt="" width="1280" heigth="500" />
+													<img class="img-responsive" src="<?php echo base_url('/uploads/publicaciones/' . $publicacion['archivo_uno']['archivo_uno']); ?>" alt="" width="1280" heigth="500" />
 												</div>
 											</div>
 									</div>

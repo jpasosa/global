@@ -35,11 +35,11 @@
 					•  Campo Estudiantes (Lucio V. Lopez, Santa Fe) .
 				</p>
 				<div class="lightbox" data-plugin-options='{"delegate": "a", "type": "image", "gallery": {"enabled": true}, "mainClass": "mfp-with-zoom", "zoom": {"enabled": true, "duration": 300}}'>
-					<a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs" href="<?php echo ASSETS . 'front/img/iriondo-inversores.jpg' ?>">
-						<img class="img-responsive" src="<?php echo ASSETS . 'front/img/iriondo-inversores.jpg' ?> " alt="Iriondo" width="100" height="200">
+					<a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs" href="<?php echo base_url('assets/front/img/iriondo-inversores.jpg'); ?>">
+						<img class="img-responsive" src="<?php echo base_url('assets/front/img/iriondo-inversores.jpg'); ?> " alt="Iriondo" width="100" height="200">
 					</a>
-					<a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs" href="<?php echo ASSETS . 'front/img/sanlorenzo-inversores.jpg' ?> ">
-						<img class="img-responsive" src="<?php echo ASSETS . 'front/img/sanlorenzo-inversores.jpg' ?> " alt="San Lorenzo" width="100" height="200">
+					<a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs" href="<?php echo base_url('assets/front/img/sanlorenzo-inversores.jpg'); ?> ">
+						<img class="img-responsive" src="<?php echo base_url('assets/front/img/sanlorenzo-inversores.jpg'); ?> " alt="San Lorenzo" width="100" height="200">
 					</a>
 				</div>
 			</div>

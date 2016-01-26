@@ -16,27 +16,27 @@
 		<!-- Web Fonts  -->
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/bootstrap/css/bootstrap.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/font-awesome/css/font-awesome.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/simple-line-icons/css/simple-line-icons.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/owl.carousel/assets/owl.carousel.min.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/owl.carousel/assets/owl.theme.default.min.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/magnific-popup/magnific-popup.css' ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/bootstrap/css/bootstrap.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/font-awesome/css/font-awesome.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/simple-line-icons/css/simple-line-icons.css'); ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/owl.carousel/assets/owl.carousel.min.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/owl.carousel/assets/owl.theme.default.min.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/magnific-popup/magnific-popup.css') ?>">
 		<!-- Theme CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/theme.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/theme-elements.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/theme-blog.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/theme-shop.css' ?>">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/theme-animate.css' ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/theme.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/theme-elements.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/theme-blog.css') ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/theme-shop.css')  ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/theme-animate.css')  ?>">
 		<!-- Current Page CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/rs-plugin/css/settings.css' ?>" media="screen">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/rs-plugin/css/layers.css' ?>" media="screen">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/rs-plugin/css/navigation.css' ?>" media="screen">
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/vendor/circle-flip-slideshow/css/component.css' ?>" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/rs-plugin/css/settings.css')  ?>" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/rs-plugin/css/layers.css')  ?>" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/rs-plugin/css/navigation.css')  ?>" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/vendor/circle-flip-slideshow/css/component.css')  ?>" media="screen">
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/skins/default.css' ?>" >
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/skins/default.css')  ?>" >
 		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="<?php echo ASSETS . 'front/css/custom.css' ?>" >
+		<link rel="stylesheet" href="<?php echo base_url('assets/front/css/custom.css')  ?>" >
 		<!-- Head Libs -->
-		<script src="<?php echo ASSETS . 'front/vendor/modernizr/modernizr.js' ?>"></script>
+		<script src="<?php echo base_url('assets/front/vendor/modernizr/modernizr.js')  ?>"></script>
 	</head>
