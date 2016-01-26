@@ -1,4 +1,3 @@
-
 			<div role="main" class="main">
 
 				<section class="page-header page-header-color page-header-primary page-header-more-padding">
@@ -24,89 +23,39 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="blog-posts">
-
-								<article class="post post-large">
-									<div class="post-image">
-										<div class="img-thumbnail">
-											<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-image-3.jpg' ?>" alt="">
+								<?php foreach ($publicaciones as $public): ?>
+									<article class="post post-large">
+										<div class="post-image">
+											<div class="img-thumbnail">
+												<img class="img-responsive" src="<?php echo '/uploads/publicaciones/' . $public['nombre']; ?>" width="1280" heigth="500" alt="">
+											</div>
 										</div>
-									</div>
-									<div class="post-date">
-										<span class="day">10</span>
-										<span class="month">Ene</span>
-									</div>
-
-									<div class="post-content">
-
-										<h2><a href="nota.html">Class aptent taciti sociosqu ad litora torquent</a></h2>
-										<p>
-											Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-											Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero.
-											Pellentesque pellentesque tempor tellus eget hendrerit. Morbi id aliquam ligula. Aliquam id dui sem.
-											Proin rhoncus consequat nisl, eu ornare mauris tincidunt vitae.
-											<a href="<?php echo base_url('noticias/ver') ?>" class="btn btn-xs btn-primary">Leer m&aacute;s...</a>
-										</p>
-
-									</div>
-								</article>
-
-								<article class="post post-large">
-									<div class="post-image">
-										<div class="img-thumbnail">
-											<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-image-3.jpg' ?> " alt="">
+										<div class="post-date">
+											<span class="day"><?php echo $public['dia']; ?></span>
+											<span class="month"><?php echo $public['mes']; ?></span>
 										</div>
-									</div>
-									<div class="post-date">
-										<span class="day">10</span>
-										<span class="month">Ene</span>
-									</div>
 
-									<div class="post-content">
+										<div class="post-content">
 
-										<h2><a href="nota.html">Class aptent taciti sociosqu ad litora torquent</a></h2>
-										<p>
-											Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-											Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero.
-											Pellentesque pellentesque tempor tellus eget hendrerit. Morbi id aliquam ligula. Aliquam id dui sem.
-											Proin rhoncus consequat nisl, eu ornare mauris tincidunt vitae.
-											<a href="<?php echo base_url('noticias/ver') ?>" class="btn btn-xs btn-primary">Leer m&aacute;s...</a>
-										</p>
+											<h2><a href="<?php echo $public['id_publicacion']; ?>"><?php echo $public['titulo']; ?></a></h2>
+											<p>
+												<?php echo $public['resumen']; ?>
+												<a href="<?php echo base_url('noticias/ver/' . $public['id_publicacion']); ?>" class="btn btn-xs btn-primary">Leer m&aacute;s...</a>
+											</p>
 
-									</div>
-								</article>
-
-								<article class="post post-large">
-									<div class="post-image">
-										<div class="img-thumbnail">
-											<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-image-3.jpg' ?>" alt="">
 										</div>
-									</div>
-									<div class="post-date">
-										<span class="day">10</span>
-										<span class="month">Ene</span>
-									</div>
+									</article>
+								<?php endforeach; ?>
 
-									<div class="post-content">
-
-										<h2><a href="nota.html">Class aptent taciti sociosqu ad litora torquent</a></h2>
-										<p>
-											Euismod atras vulputate iltricies etri elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-											Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero.
-											Pellentesque pellentesque tempor tellus eget hendrerit. Morbi id aliquam ligula. Aliquam id dui sem.
-											Proin rhoncus consequat nisl, eu ornare mauris tincidunt vitae.
-											<a href="<?php echo base_url('noticias/ver') ?>" class="btn btn-xs btn-primary">Leer m&aacute;s...</a>
-										</p>
-
-									</div>
-								</article>
-
-								<ul class="pagination pagination-lg pull-right">
+								<!-- <ul class="pagination pagination-lg pull-right">
 									<li><a href="#">«</a></li>
 									<li class="active"><a href="#">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
 									<li><a href="#">»</a></li>
 								</ul>
+								 -->
+								<?php echo $paginas; ?>
 
 							</div>
 						</div>

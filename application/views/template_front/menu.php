@@ -17,7 +17,7 @@
 									<nav class="header-nav-top">
 										<ul class="nav nav-pills">
 											<li class="hidden-xs">
-												<a href="<?php echo base_url('noticias'); ?>"><i class="fa fa-angle-right"></i> Noticias</a>
+												<a href="<?php echo base_url('noticias/listar'); ?>"><i class="fa fa-angle-right"></i> Noticias</a>
 											</li>
 										</ul>
 									</nav>

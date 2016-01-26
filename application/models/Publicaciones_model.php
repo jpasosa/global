@@ -150,6 +150,8 @@ class Publicaciones_model extends CI_Model
 
 	public function get_by_id( $id )
 	{
+		$this->load->helper('date');
+
 		$q = $this->db->get_where( 'publicaciones', array('id_publicacion'=>(int)$id) );
 		$publicacion = $q->row_array();
 
@@ -180,12 +182,85 @@ class Publicaciones_model extends CI_Model
 				$publicacion['archivo_uno']['id_archivo']				= 0;
 		}
 
+		$fecha_explode = explode("-", $publicacion['fecha']);
+		$publicacion['mes'] = month_to_letter($fecha_explode[1]);
+		$publicacion['dia'] 	= $fecha_explode[2];
+
+
+
+
 		return $publicacion;
 	}
 
+	// Nos va a traer las últimas cuatro publicaciones para mostrar en la home.
+	public function get_for_home()
+	{
+		try {
+
+			$this->load->helper('date');
+
+			$this->db->select('*');
+			$this->db->from('publicaciones');
+			$this->db->join('archivos', 'publicaciones.id_publicacion = archivos.id_publicacion');
+			$this->db->order_by("publicaciones.id_publicacion", "desc");
+			$this->db->limit(4);
+			$query = $this->db->get();
+			$publicaciones = $query->result_array();
+
+			foreach ($publicaciones as $k=>$public)
+			{
+				$fecha_explode = explode("-", $public['fecha']);
+				$publicaciones[$k]['mes'] 	= month_to_letter($fecha_explode[1]);
+				$publicaciones[$k]['dia'] 	= $fecha_explode[2];
+
+			}
+
+			return $publicaciones;
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			exit(1);
+		}
+	}
+
+	public function get_publicaciones( $limit = " " )
+	{
+
+		$this->load->helper('date');
+
+		try
+		{
+
+			$sql 	= "SELECT * FROM publicaciones P
+						INNER JOIN archivos A
+							ON A.id_publicacion=P.id_publicacion
+						ORDER BY P.id_publicacion DESC " . $limit;
+
+			$query = $this->db->query($sql);
+
+			if($query->num_rows() <= 0)
+			{
+				return array();
+			}else{
+				$publicaciones = $query->result_array();
+				foreach ($publicaciones as $k=>$public)
+				{
+					$fecha_explode = explode("-", $public['fecha']);
+					$publicaciones[$k]['mes'] 	= month_to_letter($fecha_explode[1]);
+					$publicaciones[$k]['dia'] 	= $fecha_explode[2];
+				}
+
+				return $publicaciones;
+			}
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			exit(1);
+
+		}
 
 
-
+	}
 
 }
 

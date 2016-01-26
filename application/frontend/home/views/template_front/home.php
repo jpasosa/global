@@ -3,7 +3,7 @@
 		<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"gridwidth": 1170, "gridheight": 329}'>
 			<ul>
 				<li data-transition="fade">
-					<img src="<?php echo ASSETS . 'front/img/slides/slide-home.jpg' ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" 	class="rev-slidebg">
+					<img src="<?php echo ASSETS . 'front/img/slides/slide-home.jpg' ?>" alt=""	data-bgposition="center center"	data-bgfit="cover" 	data-bgrepeat="no-repeat" class="rev-slidebg" />
 				</li>
 			</ul>
 		</div>
@@ -52,86 +52,26 @@
 			<div class="col-md-12">
 				<h2>Las &uacute;ltimas <strong>Novedades</strong></h2>
 			</div>
-			<!--nota1-->
-			<div class="col-md-3">
-				<div class="recent-posts">
-					<article class="post">
-						<div class="img-thumbnail">
-							<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-hosting-1.jpg' ?>">
-						</div>
-						<div class="date">
-							<span class="day">15</span>
-							<span class="month">Ene</span>
-						</div>
-						<h4 class="heading-primary"><a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a></h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
-						</p>
-					</article>
+			<?php foreach ($publicaciones as $publi): ?>
+				<div class="col-md-3">
+					<div class="recent-posts">
+						<article class="post">
+							<div class="img-thumbnail">
+								<img class="img-responsive" src="<?php echo 'uploads/publicaciones/' . $publi['nombre']; ?>" width="360" height="150" />
+							</div>
+							<div class="date">
+								<span class="day"><?php echo $publi['dia']; ?></span>
+								<span class="month"><?php echo $publi['mes']; ?></span>
+							</div>
+							<h4 class="heading-primary"><a href="<?php echo base_url('noticias/ver') ?>"><?php echo $publi['titulo'] ?></a></h4>
+							<p>
+								<?php echo $publi['resumen']; ?>
+								<a href="<?php echo base_url('noticias/ver/' . $publi['id_publicacion']); ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
+							</p>
+						</article>
+					</div>
 				</div>
-			</div>
-			<!--nota2-->
-			<div class="col-md-3">
-				<div class="recent-posts">
-					<article class="post">
-						<div class="img-thumbnail">
-							<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-hosting-1.jpg' ?>">
-						</div>
-						<div class="date">
-							<span class="day">15</span>
-							<span class="month">Jan</span>
-						</div>
-						<h4 class="heading-primary"><a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a></h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
-						</p>
-					</article>
-				</div>
-			</div>
-			<!--nota3-->
-			<div class="col-md-3">
-				<div class="recent-posts">
-					<article class="post">
-						<div class="img-thumbnail">
-							<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-hosting-1.jpg' ?>">
-						</div>
-						<div class="date">
-							<span class="day">15</span>
-							<span class="month">Ene</span>
-						</div>
-						<h4 class="heading-primary">
-							<a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a>
-						</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
-						</p>
-					</article>
-				</div>
-			</div>
-			<!--nota4-->
-			<div class="col-md-3">
-				<div class="recent-posts">
-					<article class="post">
-						<div class="img-thumbnail">
-							<img class="img-responsive" src="<?php echo ASSETS . 'front/img/blog/blog-hosting-1.jpg'; ?>">
-						</div>
-						<div class="date">
-							<span class="day">15</span>
-							<span class="month">Ene</span>
-						</div>
-						<h4 class="heading-primary">
-							<a href="<?php echo base_url('noticias/ver') ?>">Titulo de la nota</a>
-						</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.
-							<a href="<?php echo base_url('noticias/ver') ?>" class="read-more">Leer m&aacute;s <i class="fa fa-angle-right"></i></a>
-						</p>
-					</article>
-				</div>
-			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<section class="call-to-action featured featured-primary mb-xl">
@@ -142,7 +82,7 @@
 			<p>Ahí podés encontrar<strong> todas las notas</strong> del sitio</p>
 		</div>
 		<div class="call-to-action-btn">
-			<a href="<?php echo base_url('noticias') ?>" target="_blank" class="btn btn-lg btn-primary">Ir al archivo</a>
+			<a href="<?php echo base_url('noticias/listar') ?>" target="_blank" class="btn btn-lg btn-primary">Ir al archivo</a>
 		</div>
 	</section>
 </div>

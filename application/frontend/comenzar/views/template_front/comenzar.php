@@ -27,12 +27,12 @@
 					<strong>Error!</strong> Algo fallo en el formulario.
 				</div>
 				<h2 class="mb-sm mt-sm"><strong>Escribinos</strong> Ac&aacute;</h2>
-				<form id="contactForm" action="php/contact-form.php" method="POST">
+				<form id="contactForm" method="post" action="<?php echo base_url('comenzar'); ?>" enctype="multipart/form-data">
 					<div class="row">
 						<div class="form-group">
 							<div class="col-md-6">
 								<label>Tu nombre completo *</label>
-								<input type="text" value="" data-msg-required="Ingresa tu nombre." maxlength="100" class="form-control" name="name" id="name" required>
+								<input type="text" value="" data-msg-required="Ingresa tu nombre." maxlength="100" class="form-control" name="nombre" id="name" required>
 							</div>
 							<div class="col-md-6">
 								<label>Tu direcci&oacute;n de email *</label>
@@ -44,7 +44,7 @@
 						<div class="form-group">
 							<div class="col-md-12">
 								<label>Asunto</label>
-								<input type="text" value="" data-msg-required="Ingresa el asunto." maxlength="100" class="form-control" name="subject" id="subject" required>
+								<input type="text" value="" data-msg-required="Ingresa el asunto." maxlength="100" class="form-control" name="asunto" id="subject" required>
 							</div>
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 						<div class="form-group">
 							<div class="col-md-12">
 								<label>Mensaje *</label>
-								<textarea maxlength="5000" data-msg-required="Escribi aqui tu mensaje." rows="10" class="form-control" name="message" id="message" required></textarea>
+								<textarea maxlength="5000" data-msg-required="Escribi aqui tu mensaje." rows="10" class="form-control" name="mensaje" id="message" required></textarea>
 							</div>
 						</div>
 					</div>
