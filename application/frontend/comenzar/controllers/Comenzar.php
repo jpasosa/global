@@ -84,11 +84,7 @@ class Comenzar extends MX_Controller {
 		$this->email->message( $email );
 
 
-		$this->email->send();
-		var_dump( $this->email->print_debugger());
-
-		die();
-
+		$send_email = $this->email->send();
 
 		if ($send_email)
 		{
