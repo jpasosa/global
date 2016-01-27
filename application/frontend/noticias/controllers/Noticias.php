@@ -27,6 +27,8 @@ class Noticias extends MX_Controller
 		$data['publicaciones'] = $this->publicaciones_model->get_publicaciones($limit);
 		// Paginador
 		$this->load->library('pagination');
+		$this->load->helper('pagination');
+		$config 					= get_bootstrap_pagination('front_uno'); // configuro todo el maquetado para paginación con bootstrap
 		$config['base_url'] 		= base_url('noticias/listar/');
 		$config['total_rows'] 	= $this->publicaciones_model->count_all();
 		$config['per_page'] 	= $per_page;
