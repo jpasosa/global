@@ -83,7 +83,12 @@ class Comenzar extends MX_Controller {
 		$this->email->subject('Mensaje desde el Form. de Contacto de la web');
 		$this->email->message( $email );
 
-		$send_email = $this->email->send();
+
+		$this->email->send();
+		var_dump( $this->email->print_debugger());
+
+		die();
+
 
 		if ($send_email)
 		{
